@@ -956,8 +956,8 @@ var SEED_SKS=[
   {n:'小提琴',s:'练习曲·曲目',e:'🎻',bg:'#F8F2E8',bc:'#B89A60',lv:'Lv.2',lb:'#F8F2E8',lc:'#907040',prog:28,done:false,st1:'340h',st1l:'累计',st2:'8首',st2l:'曲目',ms:[{l:'时长',u:'分钟',qs:[15,20,30,45,60],def:30,min:5,step:5},{l:'曲目',u:'首',qs:[1,2,3,4],def:1,min:1,step:1}],ds:[{n:'340h',l:'累计'},{n:'8首',l:'曲目'},{n:'3天',l:'连续'}],pp:'28%',g:'linear-gradient(135deg,#E0D0A0,#B89A60)',dots:[1,0,0,1,0,1,0,0,1,0,1,0,1,1],q:'每一次拉弓，都是在和音乐说话。',s1:{n:'340h',l:'累计'},s2:{n:'8首',l:'曲目'},s3:{n:'3天',l:'连续'},bl:'升级目标',bp:28,bt:'340/500h'},
   {n:'编程',s:'前端·小程序',e:'💻',bg:'#EAF2F6',bc:'#7A9EB8',lv:'Lv.3',lb:'#EAF2F6',lc:'#3A7898',prog:55,done:false,st1:'4个',st1l:'项目',st2:'234天',st2l:'提交',ms:[{l:'时长',u:'分钟',qs:[30,45,60,90,120],def:60,min:5,step:5},{l:'提交',u:'次',qs:[1,2,3,5],def:1,min:0,step:1,opt:true}],ds:[{n:'4个',l:'项目'},{n:'234天',l:'提交'},{n:'8天',l:'连续'}],pp:'55%',g:'linear-gradient(135deg,#A8C8E0,#7A9EB8)',dots:[1,1,1,1,0,1,1,1,1,1,1,1,0,1],q:'又跑起来一段代码，又造出一点东西。',s1:{n:'4个',l:'项目'},s2:{n:'234天',l:'提交'},s3:{n:'8天',l:'连续'},bl:'年度项目',bp:55,bt:'4/10个'},
   {n:'冥想',s:'正念·呼吸',e:'🧘',bg:'#EEF3EE',bc:'#8AAA82',lv:'Lv.1',lb:'#EEF3EE',lc:'#5A8860',prog:18,done:false,st1:'68h',st1l:'累计',st2:'34天',st2l:'连续',ms:[{l:'时长',u:'分钟',qs:[5,10,15,20,30],def:10,min:1,step:1}],ds:[{n:'68h',l:'累计'},{n:'34天',l:'连续'},{n:'14min',l:'平均'}],pp:'18%',g:'linear-gradient(135deg,#A8C8A8,#8AAA82)',dots:[1,1,1,1,1,1,1,1,1,1,1,1,0,1],q:'安静下来的每一分钟，都值得。',s1:{n:'68h',l:'累计'},s2:{n:'34天',l:'连续'},s3:{n:'14min',l:'平均'},bl:'百小时目标',bp:18,bt:'68/100h'}
-]
-var SKS=[];;
+];
+var SKS=[];
 var DIMS=[{id:'all',l:'全部',c:'#8C7A6A'},{id:'body',l:'身体',c:'#7A9E82'},{id:'art',l:'艺术',c:'#C09090'},{id:'mind',l:'知识',c:'#9A8EC0'},{id:'tech',l:'技术',c:'#7A9EB8'},{id:'life',l:'生活',c:'#8AAA82'}];
 var EXPLORE=[
   {l:'身体力量',c:'#7A9E82',sk:['攀岩','跑步','瑜伽','篮球','跳伞','冲浪','太极','潜水','高尔夫']},
@@ -966,8 +966,6 @@ var EXPLORE=[
   {l:'技术工程',c:'#7A9EB8',sk:['烘焙','3D建模','调酒','园艺','木工']},
   {l:'生活智慧',c:'#8AAA82',sk:['旅行','理财','宠物养护','茶道','徒步']}
 ];
-var RECS={'2026-06-04':[{time:'07:28',title:'自由泳晨练',dur:'45分钟',dist:'1500m',mood:3,tag:'突破了',note:'换气节奏好多了',img:true}],'2026-06-03':[{time:'08:15',title:'蛙泳练习',dur:'30分钟',dist:'800m',mood:4,tag:'很爽',note:'蛙腿动作终于对了！'},{time:'20:30',title:'蝶泳尝试',dur:'20分钟',dist:'200m',mood:1,note:'蝶泳好难'}],'2026-06-02':[{time:'07:00',title:'自由泳长距离',dur:'60分钟',dist:'2000m',mood:3}],'2026-06-01':[{time:'07:30',title:'自由泳',dur:'45分钟',dist:'1500m',mood:3}],'2026-05-31':[{time:'08:00',title:'蛙泳+自由泳',dur:'50分钟',dist:'1200m',mood:4,tag:'不错'}]};
-var HAS_REC={};Object.keys(RECS).forEach(function(k){HAS_REC[k]=true;});
 
 /* ═══ THEME ═══ */
 var PRESETS=[
@@ -1007,31 +1005,29 @@ function applyThemeVars(){
   r.style.setProperty('--bg',bgC);r.style.setProperty('--bg2',bg2C);r.style.setProperty('--bg3',bg3C);
   r.style.setProperty('--card',cardC);r.style.setProperty('--border',borderC);r.style.setProperty('--border2',border2C);
   r.style.setProperty('--t1',t1C);r.style.setProperty('--t2',t2C);r.style.setProperty('--t3',t3C);r.style.setProperty('--acc',accC);
-  // heatmap colors
   r.style.setProperty('--hm0',hsl2hex(curHues.bg,bgSL.s-6,bgSL.l-4));
   r.style.setProperty('--hm1',hsl2hex(hmH,75,85));
   r.style.setProperty('--hm2',hsl2hex(hmH,70,65));
   r.style.setProperty('--hm3',hsl2hex(hmH,65,45));
-  // update phone bg
   document.querySelectorAll('.phone,.page,.sh,.ai-sh,.rep-sh,.tabs,.sb').forEach(function(el){el.style.setProperty('--bg',bgC);});
-  document.getElementById('applyBtn').style.background=accC;
-  document.getElementById('curThemeName').textContent=PRESETS[selPreset]?PRESETS[selPreset].name:'自定义';
-  // update hm legend
+  var ab=document.getElementById('applyBtn'); if(ab) ab.style.background=accC;
+  var ctn=document.getElementById('curThemeName'); if(ctn) ctn.textContent=PRESETS[selPreset]?PRESETS[selPreset].name:'自定义';
   var hmCs=[getColor('bg'),hsl2hex(hmH,75,85),hsl2hex(hmH,70,65),hsl2hex(hmH,65,45)];
   [0,1,2,3].forEach(function(i){var el=document.getElementById('hml'+i);if(el)el.style.background=hmCs[i];});
-  if(curPage==='stats') renderStats();
+  if(typeof curPage!=='undefined' && curPage==='stats' && typeof renderStats==='function') renderStats();
 }
 
 function updateSlider(){
-  curHues.bg=parseInt(document.getElementById('slBg').value);
-  curHues.card=parseInt(document.getElementById('slCard').value);
-  curHues.acc=parseInt(document.getElementById('slAcc').value);
-  curHues.hm=parseInt(document.getElementById('slHm').value);
-  // update previews
-  document.getElementById('prBg').style.background=getColor('bg');
-  document.getElementById('prCard').style.background=getColor('card');
-  document.getElementById('prAcc').style.background=getColor('acc');
-  document.getElementById('prHm').style.background=getColor('hm');
+  var eBg=document.getElementById('slBg'), eCard=document.getElementById('slCard'), eAcc=document.getElementById('slAcc'), eHm=document.getElementById('slHm');
+  if(!eBg||!eCard||!eAcc||!eHm) return;
+  curHues.bg=parseInt(eBg.value);
+  curHues.card=parseInt(eCard.value);
+  curHues.acc=parseInt(eAcc.value);
+  curHues.hm=parseInt(eHm.value);
+  var pBg=document.getElementById('prBg'); if(pBg) pBg.style.background=getColor('bg');
+  var pCard=document.getElementById('prCard'); if(pCard) pCard.style.background=getColor('card');
+  var pAcc=document.getElementById('prAcc'); if(pAcc) pAcc.style.background=getColor('acc');
+  var pHm=document.getElementById('prHm'); if(pHm) pHm.style.background=getColor('hm');
   selPreset=-1;
   document.querySelectorAll('.preset').forEach(function(el){el.classList.remove('on');});
   applyThemeVars();
@@ -1046,10 +1042,10 @@ function loadPreset(i){
   selPreset=i;var p=PRESETS[i];
   curHues.bg=p.bgH;curHues.card=p.cardH;curHues.acc=p.accH;curHues.hm=p.hmH;
   curSats.bg=p.bgS;curSats.card=p.cardS;curSats.acc=p.accS;curSats.hm=1;
-  document.getElementById('slBg').value=p.bgH;
-  document.getElementById('slCard').value=p.cardH;
-  document.getElementById('slAcc').value=p.accH;
-  document.getElementById('slHm').value=p.hmH;
+  var eBg=document.getElementById('slBg'); if(eBg) eBg.value=p.bgH;
+  var eCard=document.getElementById('slCard'); if(eCard) eCard.value=p.cardH;
+  var eAcc=document.getElementById('slAcc'); if(eAcc) eAcc.value=p.accH;
+  var eHm=document.getElementById('slHm'); if(eHm) eHm.value=p.hmH;
   ['bg','card','acc','hm'].forEach(function(key){
     var grp=document.querySelectorAll('#sat_'+key+' .sat-btn');
     grp.forEach(function(b,j){b.classList.toggle('on',j===curSats[key]);});
@@ -1058,17 +1054,20 @@ function loadPreset(i){
   updateSlider();
 }
 function applyTheme(){
-  var btn=document.getElementById('applyBtn');btn.textContent='✓ 已应用';
-  setTimeout(function(){btn.textContent='应用主题';},1500);
+  var btn=document.getElementById('applyBtn');
+  if(btn){ btn.textContent='✓ 已应用'; setTimeout(function(){btn.textContent='应用主题';},1500); }
   saveUserData();
 }
 
 function buildThemePage(){
-  // presets
-  document.getElementById('presetsGrid').innerHTML=PRESETS.map(function(p,i){
-    var bgC='hsl('+p.bgH+',90%,94%)';var accC='hsl('+p.accH+',55%,55%)';var cardC='hsl('+p.cardH+',85%,97%)';
-    return '<div class="preset'+(i===0?' on':'')+'" onclick="loadPreset('+i+')" style="background:'+bgC+'"><div class="preset-swatch"><div class="ps-dot" style="background:'+cardC+'"></div><div class="ps-dot" style="background:'+accC+'"></div></div><div class="preset-name" style="color:hsl('+p.bgH+',25%,22%);font-family:Nunito,sans-serif">'+p.name+'</div></div>';
-  }).join('');
+  var grid=document.getElementById('presetsGrid');
+  if(grid){
+    grid.innerHTML=PRESETS.map(function(p,i){
+      var bgC='hsl('+p.bgH+',90%,94%)';var accC='hsl('+p.accH+',55%,55%)';var cardC='hsl('+p.cardH+',85%,97%)';
+      return '<div class="preset'+(i===selPreset?' on':'')+'" onclick="loadPreset('+i+')" style="background:'+bgC+'"><div class="preset-swatch"><div class="ps-dot" style="background:'+cardC+'"></div><div class="ps-dot" style="background:'+accC+'"></div></div><div class="preset-name" style="color:hsl('+p.bgH+',25%,22%);font-family:Nunito,sans-serif">'+p.name+'</div></div>';
+    }).join('');
+  }
+
   // color rows
   var rows=[
     {key:'bg',label:'底色',desc:'页面背景，整体氛围基调',sl:'slBg',pr:'prBg',sat:'sat_bg',satLabels:['极浅','浅','中'],satKey:'bg'},
@@ -1081,6 +1080,7 @@ function buildThemePage(){
   }).join('');
   updateSlider();
 }
+
 
 /* ═══ NAV ═══ */
 
@@ -1747,7 +1747,7 @@ function renderTLD(){
 function openCk(){selSk=null;selMoodCk=-1;renderCkS1();document.getElementById('ckOv').classList.add('show');}
 function renderCkS1(){
   if(!SKS.length){
-    document.getElementById('ckSheet').innerHTML='<div class="shbar"></div><div style="text-align:center;padding:20px 10px 6px"><div style="font-size:32px;margin-bottom:10px">\ud83c\udf31</div><div style="font-size:15px;font-weight:800;color:var(--t1);margin-bottom:6px">\u8fd8\u6ca1\u6709\u53ef\u6253\u5361\u7684\u6280\u80fd</div><div style="font-size:12px;color:var(--t3);line-height:1.6;margin-bottom:18px">\u5148\u53bb\u6280\u80fd\u5e93\u6fc0\u6d3b\u4e00\u4e2a\u611f\u5174\u8da3\u7684\u9886\u57df\u5427</div><div style="padding:12px;background:var(--acc);color:#fff;border-radius:13px;font-weight:700;cursor:pointer" onclick="closeCk();nav(\'skills\')">\u53bb\u6fc0\u6d3b\u6280\u80fd →</div></div>';
+    document.getElementById('ckSheet').innerHTML='<div class="shbar"></div><div style="text-align:center;padding:20px 10px 6px"><div style="font-size:32px;margin-bottom:10px">\ud83c\udf31</div><div style="font-size:15px;font-weight:800;color:var(--t1);margin-bottom:6px">\u8fd8\u6ca1\u6709\u53ef\u6253\u5361\u7684\u6280\u80fd</div><div style="font-size:12px;color:var(--t3);line-height:1.6;margin-bottom:18px">\u5148\u53bb\u6280\u80fd\u5e93\u6fc0\u6d3b\u4e00\u4e2a\u611f\u5174\u8da3\u7684\u9886\u57df\u5427</div><div style="padding:12px;background:var(--acc);color:#fff;border-radius:13px;font-weight:700;cursor:pointer" onclick="document.getElementById(\'ckOv\').classList.remove(\'show\');nav(\'skills\')">\u53bb\u6fc0\u6d3b\u6280\u80fd →</div><div style="padding:10px;text-align:center;font-size:13px;font-weight:700;color:var(--t3);cursor:pointer" onclick="document.getElementById(\'ckOv\').classList.remove(\'show\')">\u53d6\u6d88</div></div>';
     return;
   }
 
